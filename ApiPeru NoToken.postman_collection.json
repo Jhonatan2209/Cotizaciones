@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "116aac18-2aca-4618-8bd2-4f4f6d5b1191",
+		"name": "ApiPeru NoToken",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23581505"
+	},
+	"item": [
+		{
+			"name": "Consulta DNI",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiperu.dev/api/dni/{number}",
+					"protocol": "https",
+					"host": [
+						"apiperu",
+						"dev"
+					],
+					"path": [
+						"api",
+						"dni",
+						"{number}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta RUC",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiperu.dev/api/ruc/{number}",
+					"protocol": "https",
+					"host": [
+						"apiperu",
+						"dev"
+					],
+					"path": [
+						"api",
+						"ruc",
+						"{number}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tipo de cambio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2021-10-18\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiperu.dev/api/tipo_de_cambio",
+					"protocol": "https",
+					"host": [
+						"apiperu",
+						"dev"
+					],
+					"path": [
+						"api",
+						"tipo_de_cambio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta CPE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ruc_emisor\": \"20603313888\",\r\n    \"codigo_tipo_documento\": \"03\",\r\n    \"serie_documento\": \"B001\",\r\n    \"numero_documento\": \"13\",\r\n    \"fecha_de_emision\":\"2020-07-09\",\r\n    \"total\": 162\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiperu.dev/api/cpe",
+					"protocol": "https",
+					"host": [
+						"apiperu",
+						"dev"
+					],
+					"path": [
+						"api",
+						"cpe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validacion Multiple CPE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ruc_empresa\": \"\",\r\n    \"sol_usuario\": \"\",\r\n    \"clave_usuario\": \"\",\r\n    \"comprobantes\": [\r\n        {\r\n            \"ruc_emisor\": \"20308674755\",\r\n            \"codigo_tipo_documento\": \"07\",\r\n            \"serie_documento\": \"BC01\",\r\n            \"numero_documento\": \"1\",\r\n            \"fecha_de_emision\": \"2020-09-24\",\r\n            \"total\": 120\r\n        },\r\n        {\r\n            \"ruc_emisor\": \"20308674755\",\r\n            \"codigo_tipo_documento\": \"07\",\r\n            \"serie_documento\": \"BC01\",\r\n            \"numero_documento\": \"1\",\r\n            \"fecha_de_emision\": \"2020-09-24\",\r\n            \"total\": 120\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiperu.dev/api/validacion_multiple_cpe",
+					"protocol": "https",
+					"host": [
+						"apiperu",
+						"dev"
+					],
+					"path": [
+						"api",
+						"validacion_multiple_cpe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
