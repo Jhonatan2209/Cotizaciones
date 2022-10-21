@@ -26,7 +26,7 @@ class CreateTableProspecto extends Migration
             $table->char('celular',9);
             $table->timestamps();
         });
-        DB::table('prospecto')->insert(
+        DB::table('prospecto')->insert([
             [
                 'ruc'=>'20600787595',
                 'razon_social' => 'CORPORACION PERUANA GTP EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA',
@@ -38,7 +38,7 @@ class CreateTableProspecto extends Migration
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'), 
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ]
-            );
+            ]);
     }
 
     /**

@@ -1,6 +1,7 @@
 @extends('layouts')
 @section('title', 'IngresarDatos')
 @section('content')
+
     <div class="containertwo">
         <div class="centrar">
             <h1 class="text-center">Ingresar Datos</h1>
@@ -61,7 +62,7 @@
                     <p class="lead text-center">Precio</p>
                     <div class="large-6 medium-6 column">
                         <h6 class="precio-plan text-center">Mensual</h6>
-                        <h3 class="precio-mensual text-center" id="mostrar2">-</h3>
+                        <h3 class="precio-mensual text-center" id="mostrar2">{{$mostrar->precio_plan}}</h3>
                     </div>
                     <div class="large-6 medium-6 column">
                         <h6 class="precio-plan text-center">Anual</h6>
@@ -72,15 +73,12 @@
                     </div>
                 </div>
                 <div class="btn-cotizar">
-                    <button class="btn btn-primary  btn-lg col-md-12 text-center" >Cotizar</button>
+                    <button class="btn btn-primary  btn-lg col-md-12 text-center btn btn-primary btn-lg" >Cotizar</button>
                 </div>
             </form>
-            @foreach ($ruc as $item)
+            @foreach ($plan as $precio)
                 <div>
                     <ul class="list-group">
-                        {{-- <li class="list-group-item">{{$item['item']}}</li> --}}
-                        <p>Hola</p>
-    
                     </ul>
                 </div>
             @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Plan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\HTTP;
 
@@ -19,11 +20,12 @@ class CotizarController extends Controller
      */
     public function index()
     {
+
+        $plan = Plan::get();
         $dates = Project::get();
-        $mostrar = Project::find('1');
-        $api = HTTP::get('https://schema.getpostman.com/json/collection/v2.1.0/collection.json');
-        $ruc = $api->json();
-        return view('cotizar',compact('dates','mostrar','ruc'));
+        $mostrar = Plan::find(1);
+        
+        return view('cotizar',compact('dates','mostrar','plan'));
     }
     public function index2()
     {

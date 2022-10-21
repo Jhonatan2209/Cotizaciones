@@ -25,3 +25,6 @@ function setClass(els, className, fnName) {
 function mostrarp(){
     document.getElementById('mostrar').style.display = 'block';
 }
+function mostrar(){
+    document.getElementById()
+}

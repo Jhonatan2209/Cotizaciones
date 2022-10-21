@@ -1,19 +1,20 @@
 @extends('layouts')
 @section('title', 'Cotizar en línea')
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}"> 
 
     <div class="containerone">
         <h1>
             Cotizar en línea
         </h1>
         <div class="centrar">
-            <div class="large columns">
-                <p class="text-center">
-                    Envíanos tus datos y te enviaremos una cotización <b>automáticamente</b>.
-                </p>
-                <p class="text-center lead">ACTIVACIÓN AUTOMÁTICA (en minutos).</p>
-            </div>
             <form action="{{ route('cotizarv') }}" class="form-control" method="POST">
+                <div class="large columns">
+                    <p class="text-center">
+                        Envíanos tus datos y te enviaremos una cotización <b>automáticamente</b>.
+                    </p>
+                    <p class="text-center lead">ACTIVACIÓN AUTOMÁTICA (en minutos).</p>
+                </div>
                 @csrf
                 <label class="" for="ruc">RUC(que exista en Sunat)</label>
                 <input type="text" name="ruc" id="ruc" placeholder="RUC" class="form-control"
